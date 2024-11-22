@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5340EC2C2CF0375A005D752B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5340EC2B2CF0375A005D752B /* UIKit.framework */; platformFilters = (ios, xros, ); };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		535C7F602CEDAC70003DFF4A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5340EC2B2CF0375A005D752B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		535C7F4E2CEDAC6E003DFF4A /* ghost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ghost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		535C7F5F2CEDAC70003DFF4A /* ghostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ghostTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		535C7F692CEDAC70003DFF4A /* ghostUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ghostUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5340EC2C2CF0375A005D752B /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +78,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5340EC2A2CF03758005D752B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5340EC2B2CF0375A005D752B /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		535C7F452CEDAC6E003DFF4A = {
 			isa = PBXGroup;
 			children = (
 				535C7F502CEDAC6E003DFF4A /* ghost */,
 				535C7F622CEDAC70003DFF4A /* ghostTests */,
 				535C7F6C2CEDAC70003DFF4A /* ghostUITests */,
+				5340EC2A2CF03758005D752B /* Frameworks */,
 				535C7F4F2CEDAC6E003DFF4A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -412,7 +427,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mollysandler.ghost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
@@ -449,7 +464,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mollysandler.ghost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
