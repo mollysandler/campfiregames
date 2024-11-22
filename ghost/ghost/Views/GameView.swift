@@ -54,10 +54,11 @@ struct GameView: View {
                 .foregroundColor(GameColors.secondaryText)
             
             HStack(spacing: letterSpacing) {
-                ForEach(Array(viewModel.currentLetters), id: \.self) { letter in
-                    Text(String(letter).uppercased())
+                ForEach(Array(viewModel.currentLetters).indices, id: \.self) { index in
+                    Text(String(Array(viewModel.currentLetters)[index]).uppercased())
                         .font(.system(size: 32, weight: .bold, design: .rounded))
                         .foregroundColor(GameColors.accent)
+                        .transition(.scale.combined(with: .opacity))
                 }
             }
             .frame(minHeight: 40)
@@ -65,6 +66,7 @@ struct GameView: View {
             .padding(.horizontal, 20)
             .background(GameColors.card)
             .cornerRadius(20)
+            .animation(.spring(response: 0.3, dampingFraction: 0.6), value: viewModel.currentLetters)
         }
     }
     

@@ -39,15 +39,18 @@ class GameViewModel: ObservableObject {
         }
         
         let newLetters = currentLetters + String(letter)
-        
-        if WordValidator.isValidWord(newLetters) {
-            showAlert(message: "\(currentPlayer.name) loses! '\(newLetters)' is a valid word!")
-            return
-        }
-        
+        // Update letters immediately
         gameState.currentLetters = newLetters
         inputLetter = ""
-        gameState.nextTurn()
+        
+        // Check if it's a word after a short delay
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            if WordValidator.isValidWord(newLetters) {
+                self.showAlert(message: "\(self.currentPlayer.name) loses! '\(newLetters)' is a valid word!")
+            } else {
+                self.gameState.nextTurn()
+            }
+        }
     }
     
     func handleChallenge(word: String) {
